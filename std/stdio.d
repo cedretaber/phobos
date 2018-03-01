@@ -2988,9 +2988,10 @@ $(D Range) that locks the file and allows fast writing to it.
      * which accepts string types, `ubyte[]`, individual character types, and
      * individual `ubyte`s.
      *
-     * Note: Writing either arrays of `char`s or `ubyte`s is much faster than
-     * writing each character individually a range. For large files,
-     * writing using an array acting as output buffer can result in a speed increase.
+     * Note: Writing either arrays of `char`s or `ubyte`s is faster than
+     * writing each character individually from a range. For large files,
+     * writing the contents in chunks using an intermediary array can result
+     * in a speed increase.
      *
      * Throws: $(REF UTFException, std, utf) if the data given is a `char` range
      * and it contains malformed UTF data.
